@@ -24,3 +24,7 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
+
+nmap <leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
+
