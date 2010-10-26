@@ -3,6 +3,8 @@ set shiftwidth=2
 set tabstop=2
 set expandtab
 
+let mapleader=","
+
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -15,3 +17,10 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+
+set ruler
+
+syntax on
+filetype on
+filetype plugin on
+filetype indent on

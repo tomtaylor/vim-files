@@ -1,0 +1,4 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/tom/.vim'
+let g:netrw_dirhist_2='/Users/tom/projects/newspaperclub/rails'
