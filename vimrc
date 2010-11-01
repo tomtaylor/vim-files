@@ -1,7 +1,30 @@
+filetype off
+set nocompatible
+set modelines=0
+syntax on
+filetype plugin on
+filetype indent on
+
 set softtabstop=2
 set shiftwidth=2
 set tabstop=2
 set expandtab
+
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+set relativenumber
 
 let mapleader=","
 
@@ -9,22 +32,45 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 " disable arrow keys, otherwise i'll never learn
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
 
-set ruler
+" make vim's regexp sane
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+set gdefault
 
-syntax on
-filetype on
-filetype plugin on
-filetype indent on
+" highlight search results
+set incsearch
+set showmatch
+set hlsearch
 
+" make ,CR clear search
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
+
+" invisibles
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
+map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+
+" ignores for NERDTree
+set wildignore+=*.o,*.obj,.git,vendor/rails/**,user-data/**
+
+" long lines
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
