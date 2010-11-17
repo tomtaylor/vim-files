@@ -34,6 +34,11 @@ set relativenumber
 
 let mapleader=","
 
+" set swp/tmp files to use a common location and stop cluttering up my
+" directories
+set backupdir=~/.vim/tmp,~/tmp,/tmp
+set directory=~/.vim/tmp,~/tmp,/tmp
+
 " disable arrow keys, otherwise i'll never learn
 nnoremap <up> <nop>
 nnoremap <down> <nop>
