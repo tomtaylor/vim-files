@@ -1,9 +1,15 @@
+" we disable filetype before pathogen loads, for some reason
 filetype off
-set nocompatible
-set modelines=0
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 syntax on
+filetype on
 filetype plugin on
 filetype indent on
+
+set nocompatible
+set modelines=0
 
 set softtabstop=2
 set shiftwidth=2
@@ -27,9 +33,6 @@ set laststatus=2
 set relativenumber
 
 let mapleader=","
-
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 
 " disable arrow keys, otherwise i'll never learn
 nnoremap <up> <nop>
@@ -74,3 +77,9 @@ set wrap
 set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
+
+" font
+set guifont=Menlo:h11
+
+" clipboard
+set clipboard=unnamed
