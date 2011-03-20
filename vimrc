@@ -31,6 +31,8 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set relativenumber
+" disable included files in autocomplete
+set complete-=i
 
 let mapleader=","
 
@@ -83,8 +85,26 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
 
-" font
-set guifont=Menlo:h11
+" make and python use real tabs
+au FileType make                                     set noexpandtab
+au FileType python                                   set noexpandtab
 
-" clipboard
-set clipboard=unnamed
+" Thorfile, Rakefile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile}    set ft=ruby
+
+" Opens an edit command with the path of the currently edited file filled in
+" Normal mode: <Leader>e
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" Opens a tab edit command with the path of the currently edited file filled in
+" Normal mode: <Leader>t
+map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+" Unimpaired configuration
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
