@@ -18,7 +18,8 @@ endif
 set guioptions-=T
 
 " Default gui color scheme
-color molokai
+set background=dark
+colorscheme solarized
 set guifont=Menlo:h11
 
 " Project Tree
