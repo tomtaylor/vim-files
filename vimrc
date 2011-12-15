@@ -34,6 +34,10 @@ set relativenumber
 " disable included files in autocomplete
 set complete-=i
 
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+
 let mapleader=","
 
 " set swp/tmp files to use a common location and stop cluttering up my
@@ -74,23 +78,39 @@ vnoremap <tab> %
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
-map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
-
-" ignores for NERDTree
-set wildignore+=*.o,*.obj,.git,vendor/rails/**,user-data/**
-
 " long lines
-set wrap
+set nowrap
 set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
 
-" make and python use real tabs
-au FileType make                                     set noexpandtab
-au FileType python                                   set noexpandtab
+if has("autocmd")
 
-" Thorfile, Rakefile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile}    set ft=ruby
+  " Thorfile, Rakefile and Gemfile are Ruby
+  au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile}    set ft=ruby
+  
+  " Treat JSON files like JavaScript
+  au BufNewFile,BufRead *.json set ft=javascript
+
+  " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+  au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+  
+  " In Makefiles, use real tabs, not tabs expanded to spaces
+  au FileType make set noexpandtab
+  
+  " Remember last location in file, but not for commit messages.
+  " see :help last-position-jump
+  au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g`\"" | endif
+
+endif
+
+" double percentage sign in command mode is expanded
+" to directory of current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
@@ -108,3 +128,7 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
+command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
+
+" toggle between buffers quickly
+nnoremap <leader><leader> <c-^>
