@@ -34,6 +34,12 @@ set relativenumber
 " disable included files in autocomplete
 set complete-=i
 
+"" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
