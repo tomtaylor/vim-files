@@ -1,4 +1,4 @@
-set guifont=Menlo\ Regular:h12
+set guifont=Ubuntu\ Mono:h14
 set linespace=2
 set antialias
 

@@ -40,9 +40,8 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
-let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
+colorscheme vividchalk
 
 let mapleader=","
 
@@ -117,6 +116,7 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+set wildignore+=.git,vendor/**,.svn,tmp
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
