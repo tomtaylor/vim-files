@@ -43,3 +43,6 @@
 [submodule "bundle/irblack"]
 	path = bundle/irblack
 	url = https://github.com/wgibbs/vim-irblack.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
