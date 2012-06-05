@@ -47,8 +47,8 @@ let mapleader=","
 
 " set swp/tmp files to use a common location and stop cluttering up my
 " directories
- set backupdir=~/.vim/_backup    " where to put backup files.
- set directory=~/.vim/_temp      " where to put swap files.
+set backupdir=~/.vim/_backup//    " where to put backup files.
+set directory=~/.vim/_temp//      " where to put swap files.
 
 " disable arrow keys, otherwise i'll never learn
 nnoremap <up> <nop>
