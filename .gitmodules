@@ -37,9 +37,6 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
-[submodule "bundle/jslint"]
-	path = bundle/jslint
-	url = git://github.com/hallettj/jslint.vim.git
 [submodule "bundle/bufkill"]
 	path = bundle/bufkill
 	url = https://github.com/vim-scripts/bufkill.vim.git
@@ -55,3 +52,6 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule "bundle/synastic"]
+	path = bundle/synastic
+	url = https://github.com/scrooloose/syntastic.git

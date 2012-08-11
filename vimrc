@@ -144,6 +144,3 @@ nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
-
-" Use Node.js for JavaScript interpretation
-let $JS_CMD='node'
