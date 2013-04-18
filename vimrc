@@ -146,3 +146,20 @@ nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 nmap <Leader>a, :Tabularize /,\zs<CR>
 vmap <Leader>a, :Tabularize /,\zs<CR>
+nmap <Leader>a<Space> :Tabularize /^\s*\S\+\zs/l0c1l0<CR>
+vmap <Leader>a<Space> :Tabularize /^\s*\S\+\zs/l0c1l0<CR>
+
+" for ragtag
+inoremap <M-o>       <Esc>o
+inoremap <C-j>       <Down>
+let g:ragtag_global_maps = 1
+
+" open splits opposite to vim's default which is a bit odd
+set splitbelow
+set splitright
+
+" move splits quicker
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
