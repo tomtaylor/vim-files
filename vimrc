@@ -116,7 +116,7 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
-set wildignore+=.git,vendor/**,.svn,tmp
+set wildignore+=.git,vendor/**,.svn,tmp,DerivedData,build
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
@@ -163,3 +163,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" scss syntax highlighting
+au BufRead,BufNewFile *.scss set filetype=scss
