@@ -118,9 +118,13 @@ endif
 " to directory of current file - http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+" Command-T
+map <leader>f :CommandT<cr>
+map <leader>F :CommandT %%<cr>
+map <leader>r :CommandTFlush<cr>
 set wildignore+=.git,vendor/**,.svn,tmp,DerivedData,build
+" Allow unlimited cache size
+let g:CommandTMaxCachedDirectories=0
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
