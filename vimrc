@@ -2,6 +2,7 @@
 filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+set runtimepath+=$GOROOT/misc/vim
 
 syntax on
 filetype on
@@ -166,3 +167,5 @@ nnoremap <C-H> <C-W><C-H>
 
 " scss syntax highlighting
 au BufRead,BufNewFile *.scss set filetype=scss
+" go syntax highlighting
+au BufRead,BufNewFile *.go set filetype=go
