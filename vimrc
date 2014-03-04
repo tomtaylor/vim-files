@@ -119,12 +119,10 @@ endif
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " Command-T
-map <leader>f :CommandT<cr>
-map <leader>F :CommandT %%<cr>
-map <leader>r :CommandTFlush<cr>
+map <leader>f :CtrlP<cr>
+map <leader>F :CtrlP %%<cr>
+map <leader>b :CtrlPMRU<cr>
 set wildignore+=.git,vendor/**,.svn,tmp,DerivedData,build
-" Allow unlimited cache size
-let g:CommandTMaxCachedDirectories=0
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
