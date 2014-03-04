@@ -141,6 +141,9 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
+" Automatically trim whitespace from the following files
+autocmd BufWritePre *.py,*.rb,*.erb,*.css,*.scss :%s/\s\+$//e
+
 command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
 
 " toggle between buffers quickly
