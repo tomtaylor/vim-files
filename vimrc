@@ -148,13 +148,9 @@ nnoremap <leader><leader> <c-^>
 
 " aligning characters
 nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
 nmap <Leader>a, :Tabularize /,\zs<CR>
-vmap <Leader>a, :Tabularize /,\zs<CR>
 nmap <Leader>a<Space> :Tabularize /^\s*\S\+\zs/l0c1l0<CR>
-vmap <Leader>a<Space> :Tabularize /^\s*\S\+\zs/l0c1l0<CR>
 
 " for ragtag
 inoremap <M-o>       <Esc>o
