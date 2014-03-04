@@ -32,6 +32,7 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set relativenumber
+set number
 " disable included files in autocomplete
 set complete-=i
 
@@ -94,19 +95,19 @@ if has("autocmd")
 
   " Thorfile, Rakefile and Gemfile are Ruby
   au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile}    set ft=ruby
-  
+
   " Treat JSON files like JavaScript
   au BufNewFile,BufRead *.json set ft=javascript
 
   " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
-  
+
   " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   au FileType go set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
-  
+
   " In Makefiles, use real tabs, not tabs expanded to spaces
   au FileType make set noexpandtab
-  
+
   " Remember last location in file, but not for commit messages.
   " see :help last-position-jump
   au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
@@ -118,7 +119,7 @@ endif
 " to directory of current file - http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-" Command-T
+" Ctrl-P
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlP %%<cr>
 map <leader>b :CtrlPMRU<cr>
