@@ -176,3 +176,11 @@ nnoremap <C-H> <C-W><C-H>
 au BufRead,BufNewFile *.scss set filetype=scss
 " go syntax highlighting
 au BufRead,BufNewFile *.go set filetype=go
+
+" Make ESC work in Command-T in terminal vim
+" From https://wincent.com/blog/tweaking-command-t-and-vim-for-use-in-the-terminal-and-tmux
+if &term =~ "xterm" || &term =~ "screen"
+  let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
+  let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
+  let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
+endif
