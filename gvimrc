@@ -1,4 +1,4 @@
-set guifont=Ubuntu\ Mono:h14
+set guifont=Source\ Code\ Pro\ Light:h12
 set linespace=2
 set antialias
 
