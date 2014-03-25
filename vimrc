@@ -174,6 +174,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" don't deselect blocks after indenting
+vnoremap < <gv
+vnoremap > >gv
+
 " scss syntax highlighting
 au BufRead,BufNewFile *.scss set filetype=scss
 " go syntax highlighting
