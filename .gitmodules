@@ -76,3 +76,6 @@
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "bundle/ansible-yaml"]
+	path = bundle/ansible-yaml
+	url = git://github.com/chase/vim-ansible-yaml.git
