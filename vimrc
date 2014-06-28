@@ -67,14 +67,7 @@ nnoremap k gk
 " make vim's regexp sane
 nnoremap / /\v
 vnoremap / /\v
-set ignorecase
-set smartcase
 set gdefault
-
-" highlight search results
-set incsearch
-set showmatch
-set hlsearch
 
 " make ,CR clear search
 nnoremap <leader><space> :noh<cr>
