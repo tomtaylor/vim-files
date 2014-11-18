@@ -84,35 +84,31 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
 
-if has("autocmd")
+" Thorfile, Rakefile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile}    set ft=ruby
 
-  " Thorfile, Rakefile and Gemfile are Ruby
-  au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile}    set ft=ruby
+" Treat JSON files like JavaScript
+au BufNewFile,BufRead *.json set ft=javascript
 
-  " Treat JSON files like JavaScript
-  au BufNewFile,BufRead *.json set ft=javascript
+" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
-  " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-  au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+au FileType go set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
 
-  " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-  au FileType go set softtabstop=4 tabstop=4 shiftwidth=4 noexpandtab
+" In Makefiles, use real tabs, not tabs expanded to spaces
+au FileType make set noexpandtab
 
-  " In Makefiles, use real tabs, not tabs expanded to spaces
-  au FileType make set noexpandtab
-
-  " Remember last location in file, but not for commit messages.
-  " see :help last-position-jump
-  au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g`\"" | endif
-
-endif
+" Remember last location in file, but not for commit messages.
+" see :help last-position-jump
+au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
+  \| exe "normal! g`\"" | endif
 
 " double percentage sign in command mode is expanded
 " to directory of current file - http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " Ctrl-P
+" Use project dir, not git dir
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlP %%<cr>
 map <leader>b :CtrlPMRU<cr>
@@ -140,7 +136,7 @@ autocmd BufWritePre *.py,*.rb,*.erb,*.css,*.scss :%s/\s\+$//e
 command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
 
 " toggle between buffers quickly
-nnoremap <leader><leader> <c-^>
+nnoremap <leader><leader> <C-^>
 
 " aligning characters
 nmap <Leader>a= :Tabularize /=<CR>
@@ -175,11 +171,10 @@ vnoremap > >gv
 au BufRead,BufNewFile *.scss set filetype=scss
 " go syntax highlighting
 au BufRead,BufNewFile *.go set filetype=go
+" disable hard wrapping for Markdown files
+au BufRead,BufNewFile *.md,*.markdown set wrap linebreak nolist textwidth=0 wrapmargin=0
 
-" Make ESC work in Command-T in terminal vim
-" From https://wincent.com/blog/tweaking-command-t-and-vim-for-use-in-the-terminal-and-tmux
-if &term =~ "xterm" || &term =~ "screen"
-  let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
-  let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
-  let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
-endif
+" Use jshint for JS syntax
+let g:syntastic_check_on_open=1
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_quiet_messages = { "type": "style" }
