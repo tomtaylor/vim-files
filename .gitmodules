@@ -58,9 +58,6 @@
 [submodule "bundle/ragtag"]
 	path = bundle/ragtag
 	url = https://github.com/tpope/vim-ragtag.git
-[submodule "bundle/golang"]
-	path = bundle/golang
-	url = https://github.com/jnwhiteh/vim-golang.git
 [submodule "bundle/scss-syntax"]
 	path = bundle/scss-syntax
 	url = https://github.com/cakebaker/scss-syntax.vim
@@ -76,3 +73,6 @@
 [submodule "bundle/ansible-yaml"]
 	path = bundle/ansible-yaml
 	url = git://github.com/chase/vim-ansible-yaml.git
+[submodule "bundle/go"]
+	path = bundle/go
+	url = https://github.com/fatih/vim-go.git
