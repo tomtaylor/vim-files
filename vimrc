@@ -177,4 +177,3 @@ au BufRead,BufNewFile *.md,*.markdown set wrap linebreak nolist textwidth=0 wrap
 " Use jshint for JS syntax
 let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_quiet_messages = { "type": "style" }
