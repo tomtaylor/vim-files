@@ -136,7 +136,7 @@ autocmd BufWritePre *.py,*.rb,*.erb,*.css,*.scss :%s/\s\+$//e
 command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
 
 " toggle between buffers quickly
-nnoremap <leader><leader> <C-^>
+nnoremap <Leader><Leader> <C-^>
 
 " aligning characters
 nmap <Leader>a= :Tabularize /=<CR>
