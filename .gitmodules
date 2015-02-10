@@ -52,9 +52,6 @@
 [submodule "bundle/gnupg"]
 	path = bundle/gnupg
 	url = https://github.com/vim-scripts/gnupg.vim.git
-[submodule "bundle/easymotion"]
-	path = bundle/easymotion
-	url = https://github.com/Lokaltog/vim-easymotion.git
 [submodule "bundle/ragtag"]
 	path = bundle/ragtag
 	url = https://github.com/tpope/vim-ragtag.git
