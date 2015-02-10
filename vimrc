@@ -113,6 +113,11 @@ map <leader>f :CtrlP<cr>
 map <leader>F :CtrlP %%<cr>
 map <leader>b :CtrlPMRU<cr>
 set wildignore+=.git,vendor/**,.svn,tmp,DerivedData,build
+" Ignore some folders and files for CtrlP indexing
+ let g:ctrlp_custom_ignore = {
+   \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+   \ }
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
