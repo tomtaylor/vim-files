@@ -179,6 +179,7 @@ au BufRead,BufNewFile *.go set filetype=go
 " disable hard wrapping for Markdown files
 au BufRead,BufNewFile *.md,*.markdown set wrap linebreak nolist textwidth=0 wrapmargin=0
 
-" Use jshint for JS syntax
+" Use jsxhint for JS syntax
 let g:syntastic_check_on_open=1
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
