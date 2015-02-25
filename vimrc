@@ -183,3 +183,4 @@ au BufRead,BufNewFile *.md,*.markdown set wrap linebreak nolist textwidth=0 wrap
 let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+let g:syntastic_scss_checkers = ['scss_lint']
