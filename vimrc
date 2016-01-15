@@ -112,10 +112,10 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlP %%<cr>
 map <leader>b :CtrlPMRU<cr>
-set wildignore+=.git,vendor/**,.svn,tmp,DerivedData,build
+set wildignore+=.git,vendor/**,.svn,tmp,DerivedData,build,_build
 " Ignore some folders and files for CtrlP indexing
  let g:ctrlp_custom_ignore = {
-   \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+   \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp|deps$',
    \ 'file': '\.so$\|\.dat$|\.DS_Store$'
    \ }
 
