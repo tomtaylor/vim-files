@@ -109,8 +109,8 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " Ctrl-P
 " Use project dir, not git dir
-map <leader>f :CtrlP<cr>
-map <leader>F :CtrlP %%<cr>
+map <leader>f :CtrlP<F5><cr>
+map <leader>F :CtrlP %%<F5><cr>
 map <leader>b :CtrlPMRU<cr>
 set wildignore+=.git,vendor/**,.svn,tmp,DerivedData,build,_build,*.pyc
 " Ignore some folders and files for CtrlP indexing
